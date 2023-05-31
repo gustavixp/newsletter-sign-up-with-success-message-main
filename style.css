@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-red-400: hsl(4, 100%, 67%);
+  --primary-orange-400: hsl(14, 88%, 53%);
+
+  --neutral-grey-800: hsl(234, 29%, 20%);
+  --neutral-grey-600: hsl(235, 18%, 26%);
+  --neutral-grey-400: hsl(231, 7%, 60%);
+  --neutral-grey-200: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--neutral-grey-600);
+}
+
+.wrapper {
+  width: clamp(300px, 100%, 5100px);
+  margin: 0 auto;
+}
+
+.content {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/* =-                   C A R D                   -= */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+.card {
+  width: clamp(300px, 100%, 900px);
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--neutral-grey-200);
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.success .card__text,
+.card.success .card__image {
+  display: none;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__image picture, .card__image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.card__text h1 {
+  font-size: clamp(35px, 10vw, 55px);
+  color: var(--neutral-grey-800);
+  margin-bottom: 15px;
+}
+
+.card__text p {
+  font-size: clamp(16px, 3vw, 20px);
+  max-width: 33ch;
+  margin-bottom: 20px;
+}
+
+.card__text ul {
+  margin-bottom: 40px;
+}
+
+.card__text li {
+  display: flex;
+  font-size: clamp(16px, 3vw, 20px);
+  max-width: 33ch;
+}
+
+.card__text li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.card__text li::before {
+  content: url(assets/images/icon-list.svg);
+  display: flex;
+  align-self: self-start;
+  margin-right: 15px;
+}
+
+#email__form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+
+#email__form small {
+  position: relative;
+  display: inline-flex;
+  font-weight: 600;
+  font-size: clamp(12px, 3vw, 14px);
+  width: 100%;
+}
+
+#email__form input {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 13px 20px;
+  margin: 10px 0 20px;
+  font-size: clamp(15px, 3vw, 20px);
+  outline: 1px solid var(--neutral-grey-400);
+}
+
+#email__form button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 13px 20px;
+  font-weight: bold;
+  font-size: clamp(15px, 3vw, 20px);
+  color: white;
+  background-color: var(--neutral-grey-600);
+}
+
+#email__form.error small::after {
+  content: 'Valid email required';
+  position: absolute;
+  right: 0;
+  display: inline-flex;
+  width: fit-content;
+  color: var(--primary-red-400);
+}
+
+#email__form.error input {
+  outline: 1px solid var(--primary-red-400);
+  background-color: hsl(4, 100%, 90%);
+  color: hsl(4, 100%, 10%);
+}
+
+/* CARD SUCCESS */
+
+.card__success {
+  display: none;
+}
+
+.card.success .card__success {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.card__success h2 {
+  font-size: clamp(35px, 10vw, 50px);
+  line-height: 1.1;
+  color: var(--neutral-grey-800);
+  margin: 40px 0 20px;
+}
+
+.card__success p {
+  font-size: clamp(16px, 3vw, 20px);
+  max-width: 38ch;
+  margin-bottom: 150px;
+}
+
+.card__success a {
+  text-align: center;
+  width: 100%;
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 13px 20px;
+  color: white;
+  background-color: var(--neutral-grey-600);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/* =-                D E S K T O P                -= */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+@media screen and (width >= 830px) {
+
+  .card {
+    width: clamp(300px, 100%, 850px);
+    min-height: unset;
+    margin: 2rem auto;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--neutral-grey-200);
+  }
+  
+  .card__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card.success .card__text,
+  .card.success .card__image {
+    display: none;
+  }
+
+  .card__image {
+    width: fit-content;
+    max-width: 380px;
+    padding: 1rem;
+  }
+
+  .card__text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+    padding: 4rem 2rem;
+  }
+
+  .card__text h1 {
+    font-size: 55px;
+    color: var(--neutral-grey-800);
+    margin-bottom: 5px;
+  }
+
+  .card__text p {
+    font-size: 16px;
+    max-width: 40ch;
+    margin-bottom: 20px;
+  }
+
+  .card__text ul {
+    margin-bottom: 30px;
+  }
+
+  .card__text li {
+    display: flex;
+    font-size: 16px;
+    max-width: 40ch;
+  }
+
+  .card__text li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  .card__text li::before {
+    content: url(assets/images/icon-list.svg);
+    display: flex;
+    align-self: self-start;
+    margin-right: 15px;
+  }
+
+  #email__form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #email__form small {
+    position: relative;
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  #email__form input {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    margin: 10px 0 20px;
+    font-size: 16px;
+    outline: 1px solid var(--neutral-grey-400);
+  }
+
+  #email__form input:hover, #email__form input:focus {
+    outline: 1px solid var(--neutral-grey-600);
+  }
+
+  #email__form button {
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: var(--neutral-grey-600);
+  }
+
+  #email__form button:hover {
+    background: linear-gradient(to right, var(--primary-red-400) 0%, var(--primary-orange-400) 100%);
+  }
+
+  #email__form.error small::after {
+    content: 'Valid email required';
+    position: absolute;
+    right: 0;
+    display: inline-flex;
+    width: fit-content;
+    color: var(--primary-red-400);
+  }
+
+  #email__form.error input {
+    outline: 1px solid var(--primary-red-400);
+    background-color: hsl(4, 100%, 90%);
+    color: hsl(4, 100%, 10%);
+  }
+
+  /* CARD SUCCESS */
+
+  .card__success {
+    display: none;
+  }
+
+  .card.success {
+    width: fit-content;
+  }
+
+  .card.success .card__success {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: fit-content;
+    min-height: unset;
+    padding: 3rem;
+  }
+
+  .card__success img {
+    width: 100%;
+    max-width: 50px;
+  }
+
+  .card__success h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    max-width: 10ch;
+    width: fit-content;
+    color: var(--neutral-grey-800);
+    margin: 20px 0;
+  }
+
+  .card__success p {
+    font-size: 16px;
+    max-width: 40ch;
+    margin-bottom: 40px;
+  }
+
+  .card__success a {
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    color: white;
+    background-color: var(--neutral-grey-600);
+  }
+
+  .card__success a:hover {
+    background: linear-gradient(to right, var(--primary-red-400) 0%, var(--primary-orange-400) 100%);
+  }
+}
